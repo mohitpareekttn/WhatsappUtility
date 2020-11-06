@@ -26,3 +26,5 @@ fastlane/
 Pods/
 !Podfile.lock
 **/xcuserdata/**
+
+Whatsapp utility demo/Whatsapp utility demo.xcodeproj/project.xcworkspace/xcuserdata/ttn.xcuserdatad/UserInterfaceState.xcuserstate
