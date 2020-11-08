@@ -13,6 +13,11 @@
 		45FFAE142554118E00CF6697 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45FFAE122554118E00CF6697 /* Main.storyboard */; };
 		45FFAE162554118F00CF6697 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45FFAE152554118F00CF6697 /* Assets.xcassets */; };
 		45FFAE192554118F00CF6697 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45FFAE172554118F00CF6697 /* LaunchScreen.storyboard */; };
+		45FFAE2225558EFB00CF6697 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 45FFAE2025558EFB00CF6697 /* Model.xcdatamodeld */; };
+		45FFAE472555911500CF6697 /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FFAE462555911500CF6697 /* CoreData.swift */; };
+		45FFAE5A2558067000CF6697 /* Messages+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FFAE582558067000CF6697 /* Messages+CoreDataClass.swift */; };
+		45FFAE5D255825F600CF6697 /* CustomSavedMessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FFAE5C255825F600CF6697 /* CustomSavedMessagesViewController.swift */; };
+		45FFAE5F2558261400CF6697 /* SetNewCustomMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FFAE5E2558261400CF6697 /* SetNewCustomMessageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		45FFAE152554118F00CF6697 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		45FFAE182554118F00CF6697 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		45FFAE1A2554118F00CF6697 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45FFAE2125558EFB00CF6697 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		45FFAE462555911500CF6697 /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
+		45FFAE582558067000CF6697 /* Messages+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Messages+CoreDataClass.swift"; sourceTree = "<group>"; };
+		45FFAE5C255825F600CF6697 /* CustomSavedMessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSavedMessagesViewController.swift; sourceTree = "<group>"; };
+		45FFAE5E2558261400CF6697 /* SetNewCustomMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNewCustomMessageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,12 +69,25 @@
 				45FFAE0C2554118E00CF6697 /* AppDelegate.swift */,
 				45FFAE0E2554118E00CF6697 /* SceneDelegate.swift */,
 				45FFAE102554118E00CF6697 /* ViewController.swift */,
+				45FFAE462555911500CF6697 /* CoreData.swift */,
+				45FFAE53255805C900CF6697 /* CoreDataModel */,
 				45FFAE122554118E00CF6697 /* Main.storyboard */,
+				45FFAE5E2558261400CF6697 /* SetNewCustomMessageViewController.swift */,
+				45FFAE5C255825F600CF6697 /* CustomSavedMessagesViewController.swift */,
 				45FFAE152554118F00CF6697 /* Assets.xcassets */,
+				45FFAE2025558EFB00CF6697 /* Model.xcdatamodeld */,
 				45FFAE172554118F00CF6697 /* LaunchScreen.storyboard */,
 				45FFAE1A2554118F00CF6697 /* Info.plist */,
 			);
 			path = "Whatsapp utility demo";
+			sourceTree = "<group>";
+		};
+		45FFAE53255805C900CF6697 /* CoreDataModel */ = {
+			isa = PBXGroup;
+			children = (
+				45FFAE582558067000CF6697 /* Messages+CoreDataClass.swift */,
+			);
+			path = CoreDataModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,8 +162,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				45FFAE112554118E00CF6697 /* ViewController.swift in Sources */,
+				45FFAE5A2558067000CF6697 /* Messages+CoreDataClass.swift in Sources */,
 				45FFAE0D2554118E00CF6697 /* AppDelegate.swift in Sources */,
 				45FFAE0F2554118E00CF6697 /* SceneDelegate.swift in Sources */,
+				45FFAE2225558EFB00CF6697 /* Model.xcdatamodeld in Sources */,
+				45FFAE472555911500CF6697 /* CoreData.swift in Sources */,
+				45FFAE5D255825F600CF6697 /* CustomSavedMessagesViewController.swift in Sources */,
+				45FFAE5F2558261400CF6697 /* SetNewCustomMessageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,6 +364,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		45FFAE2025558EFB00CF6697 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				45FFAE2125558EFB00CF6697 /* Model.xcdatamodel */,
+			);
+			currentVersion = 45FFAE2125558EFB00CF6697 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 45FFAE012554118E00CF6697 /* Project object */;
 }

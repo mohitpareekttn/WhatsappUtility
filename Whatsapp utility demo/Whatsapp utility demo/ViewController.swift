@@ -18,35 +18,22 @@ class ViewController: UIViewController {
     @IBAction func buttonPressed(_ sender: UIButton) {
         
         openWhatsapp()
-//        let phoneNumber =  "8259885915" // you need to change this number
-//        let appURL = URL(string: "https://api.whatsapp.com/send?phone=\(phoneNumber)")!
-//        if UIApplication.shared.canOpenURL(appURL) {
-//            if #available(iOS 10.0, *) {
-//                UIApplication.shared.open(appURL, options: [:], completionHandler: nil)
-//            }
-//            else {
-//                UIApplication.shared.openURL(appURL)
-//            }
-//        } else {
-//            // WhatsApp is not installed
-//        }
-//
-//        let urlWhats = "whatsapp://send?phone=+919789384445&abid=12354&text=Hello"
-//        if let urlString = urlWhats.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed) {
-//            if let whatsappURL = URL(string: urlString) {
-//                if UIApplication.shared.canOpenURL(whatsappURL) {
-//                    UIApplication.shared.openURL(whatsappURL)
-//                } else {
-//                    print("Install Whatsapp")
-//                }
-//            }
-//        }
+
+        
+    }
+    
+    @IBAction func addNewCustomMessagePressed(_ sender: UIButton) {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "CustomSavedMessagesViewController")
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+        
         
     }
     
     
     func openWhatsapp(){
-        let urlWhats = "whatsapp://send?phone=+918259885915&abid=12354&text=Hello"
+        let urlWhats = "https://api.whatsapp.com/send?phone=+918259885915&abid=12354&text=Hello"
         if let urlString = urlWhats.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed){
             if let whatsappURL = URL(string: urlString) {
                 if UIApplication.shared.canOpenURL(whatsappURL){
