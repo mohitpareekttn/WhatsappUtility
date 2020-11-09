@@ -7,12 +7,40 @@
 //
 
 import UIKit
+import TagListView
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var tagView: TagListView!
+    @IBOutlet weak var enterTheNumberTextField: UITextField!
+    @IBOutlet weak var enterTheMessageTextField: UITextView!
+    
+    let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
+    var messages: [Messages] = []
+    var tags: [String] = []
+    let coreDataObj = CoreData()
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        
+        tagView.textFont = UIFont.systemFont(ofSize: 24)
+        tagView.delegate = self
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        messages = coreDataObj.fetchData()
+        self.addTagsOnTagView()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        tagView.removeAllTags()
     }
 
     @IBAction func buttonPressed(_ sender: UIButton) {
@@ -26,8 +54,6 @@ class ViewController: UIViewController {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyBoard.instantiateViewController(withIdentifier: "CustomSavedMessagesViewController")
         self.navigationController?.pushViewController(vc, animated: true)
-        
-        
         
     }
     
@@ -50,5 +76,22 @@ class ViewController: UIViewController {
         }
     }
     
+    func addTagsOnTagView() {
+        for title in messages {
+            tagView.addTag(title.messageTitle!)
+            
+        }
+        
+    }
+    
 }
 
+extension ViewController: TagListViewDelegate {
+    func tagPressed(_ title: String, tagView: TagView, sender: TagListView) {
+        for item in messages {
+            if title == item.messageTitle! {
+                enterTheMessageTextField.text = item.message
+            }
+        }
+    }
+}

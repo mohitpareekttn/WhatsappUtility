@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,6 +18,7 @@
 		45FFAE5A2558067000CF6697 /* Messages+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FFAE582558067000CF6697 /* Messages+CoreDataClass.swift */; };
 		45FFAE5D255825F600CF6697 /* CustomSavedMessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FFAE5C255825F600CF6697 /* CustomSavedMessagesViewController.swift */; };
 		45FFAE5F2558261400CF6697 /* SetNewCustomMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FFAE5E2558261400CF6697 /* SetNewCustomMessageViewController.swift */; };
+		B49757563BBBC88C6EF0F462 /* Pods_Whatsapp_utility_demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFBA839CE9A15B600AE91319 /* Pods_Whatsapp_utility_demo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,9 @@
 		45FFAE582558067000CF6697 /* Messages+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Messages+CoreDataClass.swift"; sourceTree = "<group>"; };
 		45FFAE5C255825F600CF6697 /* CustomSavedMessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSavedMessagesViewController.swift; sourceTree = "<group>"; };
 		45FFAE5E2558261400CF6697 /* SetNewCustomMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNewCustomMessageViewController.swift; sourceTree = "<group>"; };
+		8D34F02D285E6BD206079B29 /* Pods-Whatsapp utility demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Whatsapp utility demo.debug.xcconfig"; path = "Target Support Files/Pods-Whatsapp utility demo/Pods-Whatsapp utility demo.debug.xcconfig"; sourceTree = "<group>"; };
+		AFBA839CE9A15B600AE91319 /* Pods_Whatsapp_utility_demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Whatsapp_utility_demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE85CCCF25BA9FAAA5C7092C /* Pods-Whatsapp utility demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Whatsapp utility demo.release.xcconfig"; path = "Target Support Files/Pods-Whatsapp utility demo/Pods-Whatsapp utility demo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B49757563BBBC88C6EF0F462 /* Pods_Whatsapp_utility_demo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +57,8 @@
 			children = (
 				45FFAE0B2554118E00CF6697 /* Whatsapp utility demo */,
 				45FFAE0A2554118E00CF6697 /* Products */,
+				6A78DD71FF73020356E52076 /* Pods */,
+				D76EEB212C5A404B777D8A8F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -72,8 +79,8 @@
 				45FFAE462555911500CF6697 /* CoreData.swift */,
 				45FFAE53255805C900CF6697 /* CoreDataModel */,
 				45FFAE122554118E00CF6697 /* Main.storyboard */,
-				45FFAE5E2558261400CF6697 /* SetNewCustomMessageViewController.swift */,
 				45FFAE5C255825F600CF6697 /* CustomSavedMessagesViewController.swift */,
+				45FFAE5E2558261400CF6697 /* SetNewCustomMessageViewController.swift */,
 				45FFAE152554118F00CF6697 /* Assets.xcassets */,
 				45FFAE2025558EFB00CF6697 /* Model.xcdatamodeld */,
 				45FFAE172554118F00CF6697 /* LaunchScreen.storyboard */,
@@ -90,6 +97,23 @@
 			path = CoreDataModel;
 			sourceTree = "<group>";
 		};
+		6A78DD71FF73020356E52076 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8D34F02D285E6BD206079B29 /* Pods-Whatsapp utility demo.debug.xcconfig */,
+				BE85CCCF25BA9FAAA5C7092C /* Pods-Whatsapp utility demo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		D76EEB212C5A404B777D8A8F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AFBA839CE9A15B600AE91319 /* Pods_Whatsapp_utility_demo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -97,9 +121,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 45FFAE1D2554118F00CF6697 /* Build configuration list for PBXNativeTarget "Whatsapp utility demo" */;
 			buildPhases = (
+				8C77AA2E9A25D8F8EB1507B9 /* [CP] Check Pods Manifest.lock */,
 				45FFAE052554118E00CF6697 /* Sources */,
 				45FFAE062554118E00CF6697 /* Frameworks */,
 				45FFAE072554118E00CF6697 /* Resources */,
+				BDEBF531A0934635C209A2E5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -155,6 +181,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8C77AA2E9A25D8F8EB1507B9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Whatsapp utility demo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BDEBF531A0934635C209A2E5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Whatsapp utility demo/Pods-Whatsapp utility demo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Whatsapp utility demo/Pods-Whatsapp utility demo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Whatsapp utility demo/Pods-Whatsapp utility demo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		45FFAE052554118E00CF6697 /* Sources */ = {
@@ -310,6 +378,7 @@
 		};
 		45FFAE1E2554118F00CF6697 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8D34F02D285E6BD206079B29 /* Pods-Whatsapp utility demo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -327,6 +396,7 @@
 		};
 		45FFAE1F2554118F00CF6697 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE85CCCF25BA9FAAA5C7092C /* Pods-Whatsapp utility demo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
