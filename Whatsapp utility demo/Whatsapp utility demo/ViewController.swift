@@ -59,7 +59,10 @@ class ViewController: UIViewController {
     
     
     func openWhatsapp(){
-        let urlWhats = "https://api.whatsapp.com/send?phone=+918259885915&abid=12354&text=Hello"
+        let phoneNumber =  "+919205156768"
+        let urlWhats = "https://wa.me/" + phoneNumber + "/?text=hello" //+918259885915/?text=hello"
+
+        //let urlWhats = "https://api.whatsapp.com/send?phone=+918259885915&abid=12354&text=Hello"
         if let urlString = urlWhats.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed){
             if let whatsappURL = URL(string: urlString) {
                 if UIApplication.shared.canOpenURL(whatsappURL){
