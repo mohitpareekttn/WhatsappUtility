@@ -8,12 +8,13 @@
 
 import UIKit
 import TagListView
+import CoreData
 
-class ViewController: UIViewController {
+class HomeViewController: UIViewController {
 
     @IBOutlet weak var tagView: TagListView!
     @IBOutlet weak var enterTheNumberTextField: UITextField!
-    @IBOutlet weak var enterTheMessageTextField: UITextView!
+    @IBOutlet weak var enterTheMessageTextView: UITextView!
     
     let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
     var messages: [Messages] = []
@@ -26,7 +27,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        
         tagView.textFont = UIFont.systemFont(ofSize: 24)
         tagView.delegate = self
         
@@ -34,7 +34,7 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        messages = coreDataObj.fetchData()
+        messages = coreDataObj.fetchMessages()
         self.addTagsOnTagView()
     }
     
@@ -44,23 +44,15 @@ class ViewController: UIViewController {
     }
 
     @IBAction func buttonPressed(_ sender: UIButton) {
-        
         openWhatsapp()
-
-        
     }
     
-    @IBAction func addNewCustomMessagePressed(_ sender: UIButton) {
-        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyBoard.instantiateViewController(withIdentifier: "CustomSavedMessagesViewController")
-        self.navigationController?.pushViewController(vc, animated: true)
-        
-    }
+    
     
     
     func openWhatsapp(){
-        let phoneNumber =  "+919205156768"
-        let urlWhats = "https://wa.me/" + phoneNumber + "/?text=hello" //+918259885915/?text=hello"
+        //let phoneNumber =  "+919205156768"
+        let urlWhats = "https://wa.me/" + enterTheNumberTextField.text! + "/?text=hello" //+918259885915/?text=hello"
 
         //let urlWhats = "https://api.whatsapp.com/send?phone=+918259885915&abid=12354&text=Hello"
         if let urlString = urlWhats.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed){
@@ -75,6 +67,8 @@ class ViewController: UIViewController {
                 else {
                     print("Install Whatsapp")
                 }
+                
+                coreDataObj.createHistory(number: enterTheNumberTextField.text ?? "", message: enterTheMessageTextView.text)
             }
         }
     }
@@ -89,11 +83,11 @@ class ViewController: UIViewController {
     
 }
 
-extension ViewController: TagListViewDelegate {
+extension HomeViewController: TagListViewDelegate {
     func tagPressed(_ title: String, tagView: TagView, sender: TagListView) {
         for item in messages {
             if title == item.messageTitle! {
-                enterTheMessageTextField.text = item.message
+                enterTheMessageTextView.text = item.message
             }
         }
     }

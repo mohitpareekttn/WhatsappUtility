@@ -15,12 +15,22 @@ class CoreData {
     private let managedContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
     
     
-    func createData(title: String, message: String) {
+    func createMessage(title: String, message: String) {
         
         //creating a new record
         let newMessage = Messages(context: managedContext!)
         newMessage.message = message
         newMessage.messageTitle = title
+        
+        //save the data after creating it
+        saveData()
+    }
+    
+    func createHistory(number: String, message: String) {
+        //creating a new record
+        let newNumber = History(context: managedContext!)
+        newNumber.message = message
+        newNumber.number = number
         
         //save the data after creating it
         saveData()
@@ -34,7 +44,7 @@ class CoreData {
         }
     }
     
-    func fetchData() -> [Messages] {
+    func fetchMessages() -> [Messages] {
         var messages: [Messages]?
         
         //fetch the data from core data
@@ -44,5 +54,18 @@ class CoreData {
             print("fetching of messages failed")
         }
         return messages ?? []
+    }
+    
+    func fetchHistory() -> [History] {
+        var history: [History]?
+        
+        //fetch the data from core data
+        do {
+            history = try managedContext?.fetch(History.fetchRequest())
+        } catch {
+            print("fetching of messages failed")
+        }
+        return history ?? []
+        
     }
 }

@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/ttn/Documents/whatsapp utility/Whatsapp utility demo/Whatsapp utility demo/CoreDataModel/History+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
       location = "group:Whatsapp utility demo.xcodeproj">
    </FileRef>
    <FileRef

@@ -7,9 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		454608E7256642690046E8CF /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454608E6256642690046E8CF /* HistoryViewController.swift */; };
+		454608F52566623A0046E8CF /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454608F32566623A0046E8CF /* HistoryTableViewCell.swift */; };
+		454608F62566623A0046E8CF /* HistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 454608F42566623A0046E8CF /* HistoryTableViewCell.xib */; };
+		454608FA2566906C0046E8CF /* History+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454608F92566906C0046E8CF /* History+CoreDataClass.swift */; };
+		454608FD25678E5F0046E8CF /* WUTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454608FC25678E5F0046E8CF /* WUTabBarViewController.swift */; };
+		45460902256796170046E8CF /* FeaturedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45460901256796170046E8CF /* FeaturedViewController.swift */; };
+		45671B9D256ACFF0009095B4 /* FeaturedStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45671B9C256ACFF0009095B4 /* FeaturedStoryBoard.storyboard */; };
+		4585C6F8256A8DC6005A487A /* AppStoryBoards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4585C6F7256A8DC6005A487A /* AppStoryBoards.swift */; };
+		4585C6FB256A8EC2005A487A /* WUHomeStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4585C6FA256A8EC2005A487A /* WUHomeStoryBoard.storyboard */; };
+		4585C6FE256A9EFE005A487A /* WUHistoryStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4585C6FD256A9EFE005A487A /* WUHistoryStoryBoard.storyboard */; };
+		4585C701256AA23D005A487A /* CustomMessageStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4585C700256AA23D005A487A /* CustomMessageStoryBoard.storyboard */; };
 		45FFAE0D2554118E00CF6697 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FFAE0C2554118E00CF6697 /* AppDelegate.swift */; };
 		45FFAE0F2554118E00CF6697 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FFAE0E2554118E00CF6697 /* SceneDelegate.swift */; };
-		45FFAE112554118E00CF6697 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FFAE102554118E00CF6697 /* ViewController.swift */; };
+		45FFAE112554118E00CF6697 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FFAE102554118E00CF6697 /* HomeViewController.swift */; };
 		45FFAE142554118E00CF6697 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45FFAE122554118E00CF6697 /* Main.storyboard */; };
 		45FFAE162554118F00CF6697 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45FFAE152554118F00CF6697 /* Assets.xcassets */; };
 		45FFAE192554118F00CF6697 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45FFAE172554118F00CF6697 /* LaunchScreen.storyboard */; };
@@ -17,15 +28,25 @@
 		45FFAE472555911500CF6697 /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FFAE462555911500CF6697 /* CoreData.swift */; };
 		45FFAE5A2558067000CF6697 /* Messages+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FFAE582558067000CF6697 /* Messages+CoreDataClass.swift */; };
 		45FFAE5D255825F600CF6697 /* CustomSavedMessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FFAE5C255825F600CF6697 /* CustomSavedMessagesViewController.swift */; };
-		45FFAE5F2558261400CF6697 /* SetNewCustomMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FFAE5E2558261400CF6697 /* SetNewCustomMessageViewController.swift */; };
 		B49757563BBBC88C6EF0F462 /* Pods_Whatsapp_utility_demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFBA839CE9A15B600AE91319 /* Pods_Whatsapp_utility_demo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		454608E6256642690046E8CF /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		454608F32566623A0046E8CF /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
+		454608F42566623A0046E8CF /* HistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryTableViewCell.xib; sourceTree = "<group>"; };
+		454608F92566906C0046E8CF /* History+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "History+CoreDataClass.swift"; path = "/Users/ttn/Documents/whatsapp utility/Whatsapp utility demo/Whatsapp utility demo/CoreDataModel/History+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		454608FC25678E5F0046E8CF /* WUTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WUTabBarViewController.swift; sourceTree = "<group>"; };
+		45460901256796170046E8CF /* FeaturedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedViewController.swift; sourceTree = "<group>"; };
+		45671B9C256ACFF0009095B4 /* FeaturedStoryBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FeaturedStoryBoard.storyboard; sourceTree = "<group>"; };
+		4585C6F7256A8DC6005A487A /* AppStoryBoards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoryBoards.swift; sourceTree = "<group>"; };
+		4585C6FA256A8EC2005A487A /* WUHomeStoryBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WUHomeStoryBoard.storyboard; sourceTree = "<group>"; };
+		4585C6FD256A9EFE005A487A /* WUHistoryStoryBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WUHistoryStoryBoard.storyboard; sourceTree = "<group>"; };
+		4585C700256AA23D005A487A /* CustomMessageStoryBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomMessageStoryBoard.storyboard; sourceTree = "<group>"; };
 		45FFAE092554118E00CF6697 /* Whatsapp utility demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Whatsapp utility demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		45FFAE0C2554118E00CF6697 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		45FFAE0E2554118E00CF6697 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		45FFAE102554118E00CF6697 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		45FFAE102554118E00CF6697 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		45FFAE132554118E00CF6697 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		45FFAE152554118F00CF6697 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		45FFAE182554118F00CF6697 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -34,7 +55,6 @@
 		45FFAE462555911500CF6697 /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
 		45FFAE582558067000CF6697 /* Messages+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Messages+CoreDataClass.swift"; sourceTree = "<group>"; };
 		45FFAE5C255825F600CF6697 /* CustomSavedMessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSavedMessagesViewController.swift; sourceTree = "<group>"; };
-		45FFAE5E2558261400CF6697 /* SetNewCustomMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNewCustomMessageViewController.swift; sourceTree = "<group>"; };
 		8D34F02D285E6BD206079B29 /* Pods-Whatsapp utility demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Whatsapp utility demo.debug.xcconfig"; path = "Target Support Files/Pods-Whatsapp utility demo/Pods-Whatsapp utility demo.debug.xcconfig"; sourceTree = "<group>"; };
 		AFBA839CE9A15B600AE91319 /* Pods_Whatsapp_utility_demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Whatsapp_utility_demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE85CCCF25BA9FAAA5C7092C /* Pods-Whatsapp utility demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Whatsapp utility demo.release.xcconfig"; path = "Target Support Files/Pods-Whatsapp utility demo/Pods-Whatsapp utility demo.release.xcconfig"; sourceTree = "<group>"; };
@@ -75,12 +95,21 @@
 			children = (
 				45FFAE0C2554118E00CF6697 /* AppDelegate.swift */,
 				45FFAE0E2554118E00CF6697 /* SceneDelegate.swift */,
-				45FFAE102554118E00CF6697 /* ViewController.swift */,
+				45FFAE102554118E00CF6697 /* HomeViewController.swift */,
 				45FFAE462555911500CF6697 /* CoreData.swift */,
 				45FFAE53255805C900CF6697 /* CoreDataModel */,
 				45FFAE122554118E00CF6697 /* Main.storyboard */,
+				4585C6FD256A9EFE005A487A /* WUHistoryStoryBoard.storyboard */,
+				454608E6256642690046E8CF /* HistoryViewController.swift */,
+				454608FC25678E5F0046E8CF /* WUTabBarViewController.swift */,
+				45671B9C256ACFF0009095B4 /* FeaturedStoryBoard.storyboard */,
+				4585C700256AA23D005A487A /* CustomMessageStoryBoard.storyboard */,
+				4585C6F7256A8DC6005A487A /* AppStoryBoards.swift */,
+				4585C6FA256A8EC2005A487A /* WUHomeStoryBoard.storyboard */,
+				454608F32566623A0046E8CF /* HistoryTableViewCell.swift */,
+				454608F42566623A0046E8CF /* HistoryTableViewCell.xib */,
 				45FFAE5C255825F600CF6697 /* CustomSavedMessagesViewController.swift */,
-				45FFAE5E2558261400CF6697 /* SetNewCustomMessageViewController.swift */,
+				45460901256796170046E8CF /* FeaturedViewController.swift */,
 				45FFAE152554118F00CF6697 /* Assets.xcassets */,
 				45FFAE2025558EFB00CF6697 /* Model.xcdatamodeld */,
 				45FFAE172554118F00CF6697 /* LaunchScreen.storyboard */,
@@ -93,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				45FFAE582558067000CF6697 /* Messages+CoreDataClass.swift */,
+				454608F92566906C0046E8CF /* History+CoreDataClass.swift */,
 			);
 			path = CoreDataModel;
 			sourceTree = "<group>";
@@ -176,6 +206,11 @@
 			files = (
 				45FFAE192554118F00CF6697 /* LaunchScreen.storyboard in Resources */,
 				45FFAE162554118F00CF6697 /* Assets.xcassets in Resources */,
+				4585C701256AA23D005A487A /* CustomMessageStoryBoard.storyboard in Resources */,
+				4585C6FE256A9EFE005A487A /* WUHistoryStoryBoard.storyboard in Resources */,
+				4585C6FB256A8EC2005A487A /* WUHomeStoryBoard.storyboard in Resources */,
+				45671B9D256ACFF0009095B4 /* FeaturedStoryBoard.storyboard in Resources */,
+				454608F62566623A0046E8CF /* HistoryTableViewCell.xib in Resources */,
 				45FFAE142554118E00CF6697 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -229,14 +264,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45FFAE112554118E00CF6697 /* ViewController.swift in Sources */,
+				45FFAE112554118E00CF6697 /* HomeViewController.swift in Sources */,
 				45FFAE5A2558067000CF6697 /* Messages+CoreDataClass.swift in Sources */,
+				454608FA2566906C0046E8CF /* History+CoreDataClass.swift in Sources */,
 				45FFAE0D2554118E00CF6697 /* AppDelegate.swift in Sources */,
+				454608FD25678E5F0046E8CF /* WUTabBarViewController.swift in Sources */,
 				45FFAE0F2554118E00CF6697 /* SceneDelegate.swift in Sources */,
+				454608F52566623A0046E8CF /* HistoryTableViewCell.swift in Sources */,
 				45FFAE2225558EFB00CF6697 /* Model.xcdatamodeld in Sources */,
+				4585C6F8256A8DC6005A487A /* AppStoryBoards.swift in Sources */,
 				45FFAE472555911500CF6697 /* CoreData.swift in Sources */,
 				45FFAE5D255825F600CF6697 /* CustomSavedMessagesViewController.swift in Sources */,
-				45FFAE5F2558261400CF6697 /* SetNewCustomMessageViewController.swift in Sources */,
+				45460902256796170046E8CF /* FeaturedViewController.swift in Sources */,
+				454608E7256642690046E8CF /* HistoryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,7 +421,7 @@
 			baseConfigurationReference = 8D34F02D285E6BD206079B29 /* Pods-Whatsapp utility demo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Varun Kumar (TMZ9TH5NX9)";
+				CODE_SIGN_IDENTITY = "Apple Development: Varun Kumar (TMZ9TH5NX9)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = RX67CZ6XK5;
 				INFOPLIST_FILE = "Whatsapp utility demo/Info.plist";

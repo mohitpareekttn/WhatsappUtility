@@ -10,6 +10,9 @@ import UIKit
 
 class CustomSavedMessagesViewController: UIViewController {
 
+    @IBOutlet weak var titleOfMessageTextField: UITextField!
+    @IBOutlet weak var newMessageTextField: UITextView!
+    @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var customMessageTableView: UITableView!
     
     var messages: [Messages]?
@@ -29,18 +32,20 @@ class CustomSavedMessagesViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        messages = coreDataObject.fetchData()
+        messages = coreDataObject.fetchMessages()
+        self.messages?.reverse()
         customMessageTableView.reloadData()
     }
     
-    @IBAction func addNewCustomMessageTapped(_ sender: UIButton) {
-        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyBoard.instantiateViewController(withIdentifier: "SetNewCustomMessageViewController")
-        self.navigationController?.pushViewController(vc, animated: true)
+    @IBAction func saveButtonTapped(_ sender: UIButton) {
         
-        
+        coreDataObject.createMessage(title: titleOfMessageTextField.text ?? "nil", message: newMessageTextField.text)
+        DispatchQueue.main.async {
+            self.messages = self.coreDataObject.fetchMessages()
+            self.messages?.reverse()
+            self.customMessageTableView.reloadData()
+        }
     }
-    
     
 }
 
@@ -51,8 +56,8 @@ extension CustomSavedMessagesViewController: UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let messageCell = tableView.dequeueReusableCell(withIdentifier: "messageCell", for: indexPath)
-            let message = self.messages?[indexPath.row]
-            messageCell.textLabel?.text = message?.messageTitle
+        let message = self.messages?[indexPath.row]
+        messageCell.textLabel?.text = message?.messageTitle
         
         return messageCell
         
@@ -71,7 +76,7 @@ extension CustomSavedMessagesViewController: UITableViewDelegate, UITableViewDat
             self.coreDataObject.saveData()
             
             // re-fetch the data
-            self.messages = self.coreDataObject.fetchData()
+            self.messages = self.coreDataObject.fetchMessages()
             self.customMessageTableView.reloadData()
         }
         
