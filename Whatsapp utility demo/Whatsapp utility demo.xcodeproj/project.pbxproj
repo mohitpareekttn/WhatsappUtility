@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		452D9198256F8E0600C211AC /* SF-Pro-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 452D918F256F8E0500C211AC /* SF-Pro-Display-Bold.otf */; };
+		452D9199256F8E0600C211AC /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 452D9190256F8E0600C211AC /* SF-Pro-Display-Regular.otf */; };
+		452D919B256F8E0600C211AC /* SF-Pro-Display-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 452D9192256F8E0600C211AC /* SF-Pro-Display-Light.otf */; };
+		452D919C256F8E0600C211AC /* SF-Pro-Display-RegularItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 452D9193256F8E0600C211AC /* SF-Pro-Display-RegularItalic.otf */; };
+		452D919E256F8E0600C211AC /* SF-Pro-Display-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 452D9195256F8E0600C211AC /* SF-Pro-Display-SemiBold.otf */; };
+		452D919F256F8E0600C211AC /* SF-Pro-Display-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 452D9196256F8E0600C211AC /* SF-Pro-Display-Medium.otf */; };
 		454608E7256642690046E8CF /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454608E6256642690046E8CF /* HistoryViewController.swift */; };
 		454608F52566623A0046E8CF /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454608F32566623A0046E8CF /* HistoryTableViewCell.swift */; };
 		454608F62566623A0046E8CF /* HistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 454608F42566623A0046E8CF /* HistoryTableViewCell.xib */; };
@@ -21,7 +27,6 @@
 		45FFAE0D2554118E00CF6697 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FFAE0C2554118E00CF6697 /* AppDelegate.swift */; };
 		45FFAE0F2554118E00CF6697 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FFAE0E2554118E00CF6697 /* SceneDelegate.swift */; };
 		45FFAE112554118E00CF6697 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FFAE102554118E00CF6697 /* HomeViewController.swift */; };
-		45FFAE142554118E00CF6697 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45FFAE122554118E00CF6697 /* Main.storyboard */; };
 		45FFAE162554118F00CF6697 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45FFAE152554118F00CF6697 /* Assets.xcassets */; };
 		45FFAE192554118F00CF6697 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45FFAE172554118F00CF6697 /* LaunchScreen.storyboard */; };
 		45FFAE2225558EFB00CF6697 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 45FFAE2025558EFB00CF6697 /* Model.xcdatamodeld */; };
@@ -32,6 +37,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		452D918F256F8E0500C211AC /* SF-Pro-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Bold.otf"; sourceTree = "<group>"; };
+		452D9190256F8E0600C211AC /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; };
+		452D9192256F8E0600C211AC /* SF-Pro-Display-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Light.otf"; sourceTree = "<group>"; };
+		452D9193256F8E0600C211AC /* SF-Pro-Display-RegularItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-RegularItalic.otf"; sourceTree = "<group>"; };
+		452D9195256F8E0600C211AC /* SF-Pro-Display-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-SemiBold.otf"; sourceTree = "<group>"; };
+		452D9196256F8E0600C211AC /* SF-Pro-Display-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Medium.otf"; sourceTree = "<group>"; };
 		454608E6256642690046E8CF /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		454608F32566623A0046E8CF /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		454608F42566623A0046E8CF /* HistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryTableViewCell.xib; sourceTree = "<group>"; };
@@ -47,7 +58,6 @@
 		45FFAE0C2554118E00CF6697 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		45FFAE0E2554118E00CF6697 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		45FFAE102554118E00CF6697 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		45FFAE132554118E00CF6697 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		45FFAE152554118F00CF6697 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		45FFAE182554118F00CF6697 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		45FFAE1A2554118F00CF6697 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -72,6 +82,77 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		452D9184256F75A300C211AC /* History */ = {
+			isa = PBXGroup;
+			children = (
+				4585C6FD256A9EFE005A487A /* WUHistoryStoryBoard.storyboard */,
+				454608E6256642690046E8CF /* HistoryViewController.swift */,
+				452D9185256F75CD00C211AC /* HistoryTableViewCell */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		452D9185256F75CD00C211AC /* HistoryTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				454608F32566623A0046E8CF /* HistoryTableViewCell.swift */,
+				454608F42566623A0046E8CF /* HistoryTableViewCell.xib */,
+			);
+			path = HistoryTableViewCell;
+			sourceTree = "<group>";
+		};
+		452D9186256F75FA00C211AC /* CustomMessage */ = {
+			isa = PBXGroup;
+			children = (
+				4585C700256AA23D005A487A /* CustomMessageStoryBoard.storyboard */,
+				45FFAE5C255825F600CF6697 /* CustomSavedMessagesViewController.swift */,
+			);
+			path = CustomMessage;
+			sourceTree = "<group>";
+		};
+		452D9188256F760B00C211AC /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				45FFAE102554118E00CF6697 /* HomeViewController.swift */,
+				4585C6FA256A8EC2005A487A /* WUHomeStoryBoard.storyboard */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		452D9189256F763D00C211AC /* TabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				452D9186256F75FA00C211AC /* CustomMessage */,
+				452D9188256F760B00C211AC /* Home */,
+				452D9184256F75A300C211AC /* History */,
+				452D91A525711A9700C211AC /* Settings */,
+				454608FC25678E5F0046E8CF /* WUTabBarViewController.swift */,
+			);
+			path = TabBarController;
+			sourceTree = "<group>";
+		};
+		452D918D256F8DE900C211AC /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				452D918F256F8E0500C211AC /* SF-Pro-Display-Bold.otf */,
+				452D9192256F8E0600C211AC /* SF-Pro-Display-Light.otf */,
+				452D9196256F8E0600C211AC /* SF-Pro-Display-Medium.otf */,
+				452D9190256F8E0600C211AC /* SF-Pro-Display-Regular.otf */,
+				452D9193256F8E0600C211AC /* SF-Pro-Display-RegularItalic.otf */,
+				452D9195256F8E0600C211AC /* SF-Pro-Display-SemiBold.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		452D91A525711A9700C211AC /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				45671B9C256ACFF0009095B4 /* FeaturedStoryBoard.storyboard */,
+				45460901256796170046E8CF /* FeaturedViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		45FFAE002554118E00CF6697 = {
 			isa = PBXGroup;
 			children = (
@@ -93,23 +174,13 @@
 		45FFAE0B2554118E00CF6697 /* Whatsapp utility demo */ = {
 			isa = PBXGroup;
 			children = (
+				452D918D256F8DE900C211AC /* Fonts */,
 				45FFAE0C2554118E00CF6697 /* AppDelegate.swift */,
 				45FFAE0E2554118E00CF6697 /* SceneDelegate.swift */,
-				45FFAE102554118E00CF6697 /* HomeViewController.swift */,
 				45FFAE462555911500CF6697 /* CoreData.swift */,
+				452D9189256F763D00C211AC /* TabBarController */,
 				45FFAE53255805C900CF6697 /* CoreDataModel */,
-				45FFAE122554118E00CF6697 /* Main.storyboard */,
-				4585C6FD256A9EFE005A487A /* WUHistoryStoryBoard.storyboard */,
-				454608E6256642690046E8CF /* HistoryViewController.swift */,
-				454608FC25678E5F0046E8CF /* WUTabBarViewController.swift */,
-				45671B9C256ACFF0009095B4 /* FeaturedStoryBoard.storyboard */,
-				4585C700256AA23D005A487A /* CustomMessageStoryBoard.storyboard */,
 				4585C6F7256A8DC6005A487A /* AppStoryBoards.swift */,
-				4585C6FA256A8EC2005A487A /* WUHomeStoryBoard.storyboard */,
-				454608F32566623A0046E8CF /* HistoryTableViewCell.swift */,
-				454608F42566623A0046E8CF /* HistoryTableViewCell.xib */,
-				45FFAE5C255825F600CF6697 /* CustomSavedMessagesViewController.swift */,
-				45460901256796170046E8CF /* FeaturedViewController.swift */,
 				45FFAE152554118F00CF6697 /* Assets.xcassets */,
 				45FFAE2025558EFB00CF6697 /* Model.xcdatamodeld */,
 				45FFAE172554118F00CF6697 /* LaunchScreen.storyboard */,
@@ -206,12 +277,17 @@
 			files = (
 				45FFAE192554118F00CF6697 /* LaunchScreen.storyboard in Resources */,
 				45FFAE162554118F00CF6697 /* Assets.xcassets in Resources */,
+				452D919C256F8E0600C211AC /* SF-Pro-Display-RegularItalic.otf in Resources */,
+				452D9198256F8E0600C211AC /* SF-Pro-Display-Bold.otf in Resources */,
 				4585C701256AA23D005A487A /* CustomMessageStoryBoard.storyboard in Resources */,
 				4585C6FE256A9EFE005A487A /* WUHistoryStoryBoard.storyboard in Resources */,
 				4585C6FB256A8EC2005A487A /* WUHomeStoryBoard.storyboard in Resources */,
+				452D919F256F8E0600C211AC /* SF-Pro-Display-Medium.otf in Resources */,
+				452D919E256F8E0600C211AC /* SF-Pro-Display-SemiBold.otf in Resources */,
 				45671B9D256ACFF0009095B4 /* FeaturedStoryBoard.storyboard in Resources */,
 				454608F62566623A0046E8CF /* HistoryTableViewCell.xib in Resources */,
-				45FFAE142554118E00CF6697 /* Main.storyboard in Resources */,
+				452D9199256F8E0600C211AC /* SF-Pro-Display-Regular.otf in Resources */,
+				452D919B256F8E0600C211AC /* SF-Pro-Display-Light.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,14 +359,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		45FFAE122554118E00CF6697 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				45FFAE132554118E00CF6697 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		45FFAE172554118F00CF6697 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

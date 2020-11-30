@@ -46,8 +46,13 @@ class WUTabBarViewController: UITabBarController {
         
         let viewControllers = [homeViewController, historyViewController, customMessagesViewController, featuredViewController]
         
-        tabBarController?.viewControllers = viewControllers
+        self.viewControllers = viewControllers
         
+//        self.tabBarController?.tabBar.barTintColor = UIColor(red: 67, green: 242, blue: 132, alpha: 1.0)
+        self.tabBar.barTintColor = UIColor(red: 67/255, green: 242/255, blue: 132/255, alpha: 1.0)
+        self.tabBar.tintColor = .white
+        
+        self.tabBar.unselectedItemTintColor = UIColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 1.0)
         
     }
 

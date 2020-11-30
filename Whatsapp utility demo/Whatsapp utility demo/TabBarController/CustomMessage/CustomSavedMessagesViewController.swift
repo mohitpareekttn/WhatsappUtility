@@ -26,6 +26,11 @@ class CustomSavedMessagesViewController: UIViewController {
         self.customMessageTableView.dataSource = self
         self.customMessageTableView.delegate = self
         
+        navigationItem.title = "CUSTOM MESSAGE"
+        navigationController?.navigationBar.barTintColor = UIColor(red: 67/255, green: 242/255, blue: 132/255, alpha: 1.0)
+        navigationController?.navigationBar.tintColor = .white
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
         
         
     }
@@ -82,15 +87,5 @@ extension CustomSavedMessagesViewController: UITableViewDelegate, UITableViewDat
         
         return UISwipeActionsConfiguration(actions: [action])
         
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 0 {
-            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyBoard.instantiateViewController(withIdentifier: "SetNewCustomMessageViewController")
-            navigationController?.pushViewController(vc, animated: true)
-            
-            
-        }
     }
 }

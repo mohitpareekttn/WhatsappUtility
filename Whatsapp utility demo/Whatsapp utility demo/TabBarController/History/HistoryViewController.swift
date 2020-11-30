@@ -30,6 +30,12 @@ class HistoryViewController: UIViewController {
         let nib = UINib(nibName: "HistoryTableViewCell", bundle: nil)
         historyTableView.register(nib, forCellReuseIdentifier: "HistoryCell")
         
+        navigationItem.title = "HISTORY"
+        navigationController?.navigationBar.barTintColor = UIColor(red: 67/255, green: 242/255, blue: 132/255, alpha: 1.0)
+        navigationController?.navigationBar.tintColor = .white
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -54,6 +60,27 @@ extension HistoryViewController: UITableViewDelegate, UITableViewDataSource {
         cell.message.text = history?.message
         
         return cell
+        
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let action = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completionHandler) in
+            //set the reference to the person object
+            let messageToRemove = self.history![indexPath.row]
+            
+            //delete the object
+            self.context?.delete(messageToRemove)
+            
+            //save the data
+            
+            self.coreDataObject.saveData()
+            
+            // re-fetch the data
+            self.history = self.coreDataObject.fetchHistory()
+            self.historyTableView.reloadData()
+        }
+        
+        return UISwipeActionsConfiguration(actions: [action])
         
     }
     
