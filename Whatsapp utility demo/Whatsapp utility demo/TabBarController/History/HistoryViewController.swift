@@ -31,9 +31,9 @@ class HistoryViewController: UIViewController {
         historyTableView.register(nib, forCellReuseIdentifier: "HistoryCell")
         
         navigationItem.title = "HISTORY"
-        navigationController?.navigationBar.barTintColor = UIColor(red: 67/255, green: 242/255, blue: 132/255, alpha: 1.0)
-        navigationController?.navigationBar.tintColor = .white
-        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+        navigationController?.navigationBar.barTintColor = Colors.appThemeColor
+        navigationController?.navigationBar.tintColor = Colors.whiteColor
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white, NSAttributedString.Key.font: UIFont(name: "SFProDisplay-Bold", size: 22)!]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
         
     }

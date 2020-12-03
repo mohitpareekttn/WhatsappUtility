@@ -13,6 +13,7 @@
 		452D919C256F8E0600C211AC /* SF-Pro-Display-RegularItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 452D9193256F8E0600C211AC /* SF-Pro-Display-RegularItalic.otf */; };
 		452D919E256F8E0600C211AC /* SF-Pro-Display-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 452D9195256F8E0600C211AC /* SF-Pro-Display-SemiBold.otf */; };
 		452D919F256F8E0600C211AC /* SF-Pro-Display-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 452D9196256F8E0600C211AC /* SF-Pro-Display-Medium.otf */; };
+		45444DAB2575348600F13C96 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45444DAA2575348600F13C96 /* Colors.swift */; };
 		454608E7256642690046E8CF /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454608E6256642690046E8CF /* HistoryViewController.swift */; };
 		454608F52566623A0046E8CF /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454608F32566623A0046E8CF /* HistoryTableViewCell.swift */; };
 		454608F62566623A0046E8CF /* HistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 454608F42566623A0046E8CF /* HistoryTableViewCell.xib */; };
@@ -43,6 +44,7 @@
 		452D9193256F8E0600C211AC /* SF-Pro-Display-RegularItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-RegularItalic.otf"; sourceTree = "<group>"; };
 		452D9195256F8E0600C211AC /* SF-Pro-Display-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-SemiBold.otf"; sourceTree = "<group>"; };
 		452D9196256F8E0600C211AC /* SF-Pro-Display-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Medium.otf"; sourceTree = "<group>"; };
+		45444DAA2575348600F13C96 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		454608E6256642690046E8CF /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		454608F32566623A0046E8CF /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		454608F42566623A0046E8CF /* HistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryTableViewCell.xib; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 				45FFAE2025558EFB00CF6697 /* Model.xcdatamodeld */,
 				45FFAE172554118F00CF6697 /* LaunchScreen.storyboard */,
 				45FFAE1A2554118F00CF6697 /* Info.plist */,
+				45444DAA2575348600F13C96 /* Colors.swift */,
 			);
 			path = "Whatsapp utility demo";
 			sourceTree = "<group>";
@@ -343,6 +346,7 @@
 				45FFAE112554118E00CF6697 /* HomeViewController.swift in Sources */,
 				45FFAE5A2558067000CF6697 /* Messages+CoreDataClass.swift in Sources */,
 				454608FA2566906C0046E8CF /* History+CoreDataClass.swift in Sources */,
+				45444DAB2575348600F13C96 /* Colors.swift in Sources */,
 				45FFAE0D2554118E00CF6697 /* AppDelegate.swift in Sources */,
 				454608FD25678E5F0046E8CF /* WUTabBarViewController.swift in Sources */,
 				45FFAE0F2554118E00CF6697 /* SceneDelegate.swift in Sources */,

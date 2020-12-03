@@ -25,7 +25,9 @@ class WUTabBarViewController: UITabBarController {
         
         let homeVC = HomeViewController.instantiate(fromAppStoryboard: .WUHomeStoryBoard)
         let homeViewController = UINavigationController(rootViewController: homeVC!)
-        homeViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .contacts, tag: 0)
+//        homeViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .contacts, tag: 0)
+        homeViewController.tabBarItem = UITabBarItem(title: "Compose", image: UIImage(named: "compose_filled"), tag: 0)
+        
         
         
         
@@ -39,17 +41,19 @@ class WUTabBarViewController: UITabBarController {
         customMessagesViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 2)
         
         
-        let featureVC = FeaturedViewController.instantiate(fromAppStoryboard: .FeaturedStoryBoard)
+        let settingsVC = FeaturedViewController.instantiate(fromAppStoryboard: .FeaturedStoryBoard)
         
-        let featuredViewController = UINavigationController(rootViewController: featureVC!)
-        featuredViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .featured, tag: 3)
+        let settingsViewController = UINavigationController(rootViewController: settingsVC!)
+        settingsViewController.tabBarItem = UITabBarItem(title: "Settings", image: UIImage(named: "settings_filled"), tag: 3)
+
         
-        let viewControllers = [homeViewController, historyViewController, customMessagesViewController, featuredViewController]
+        
+        let viewControllers = [homeViewController, historyViewController, customMessagesViewController, settingsViewController]
         
         self.viewControllers = viewControllers
         
 //        self.tabBarController?.tabBar.barTintColor = UIColor(red: 67, green: 242, blue: 132, alpha: 1.0)
-        self.tabBar.barTintColor = UIColor(red: 67/255, green: 242/255, blue: 132/255, alpha: 1.0)
+        self.tabBar.barTintColor = Colors.appThemeColor
         self.tabBar.tintColor = .white
         
         self.tabBar.unselectedItemTintColor = UIColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 1.0)

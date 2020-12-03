@@ -50,11 +50,10 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hyz-og-xGs">
-                                <rect key="frame" x="112.5" y="180" width="150" height="40"/>
+                                <rect key="frame" x="94" y="180" width="187.5" height="50"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="AqJ-Ao-k0U"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="eiG-1A-YXA"/>
+                                    <constraint firstAttribute="height" constant="50" id="AqJ-Ao-k0U"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Save">
@@ -64,12 +63,12 @@
                                     <action selector="saveButtonTapped:" destination="7fq-Jn-baz" eventType="touchUpInside" id="bNZ-aM-UoH"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aeP-2H-t66">
-                                <rect key="frame" x="16" y="237" width="343" height="430"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="aeP-2H-t66">
+                                <rect key="frame" x="16" y="247" width="343" height="420"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="messageCell" id="E2L-7G-dtL">
-                                        <rect key="frame" x="0.0" y="28" width="343" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="343" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="E2L-7G-dtL" id="aZU-3A-4cJ">
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
@@ -79,7 +78,7 @@
                                 </prototypes>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hrw-Tz-ITl">
-                                <rect key="frame" x="16" y="228" width="343" height="1"/>
+                                <rect key="frame" x="16" y="238" width="343" height="1"/>
                                 <color key="backgroundColor" systemColor="systemGray2Color"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="dEQ-4O-9QW"/>
@@ -102,6 +101,7 @@
                             <constraint firstItem="NyN-XT-uOr" firstAttribute="top" secondItem="nzy-eh-sQg" secondAttribute="top" constant="16" id="MXP-xj-cgy"/>
                             <constraint firstItem="9y7-p7-iJU" firstAttribute="leading" secondItem="LbN-ox-EVr" secondAttribute="leading" constant="16" id="Mbc-8r-YN2"/>
                             <constraint firstAttribute="bottom" secondItem="aeP-2H-t66" secondAttribute="bottom" id="SFK-fs-sDp"/>
+                            <constraint firstItem="Hyz-og-xGs" firstAttribute="width" secondItem="LbN-ox-EVr" secondAttribute="width" multiplier="0.5" id="Wjc-8n-e59"/>
                             <constraint firstItem="Hyz-og-xGs" firstAttribute="top" secondItem="kKd-Kq-qpK" secondAttribute="bottom" constant="8" id="jhq-b1-Erk"/>
                             <constraint firstItem="nzy-eh-sQg" firstAttribute="trailing" secondItem="NyN-XT-uOr" secondAttribute="trailing" constant="16" id="mB8-oh-pdv"/>
                             <constraint firstItem="Hrw-Tz-ITl" firstAttribute="top" secondItem="Hyz-og-xGs" secondAttribute="bottom" constant="8" id="n9N-7c-ehs"/>
@@ -114,7 +114,7 @@
                     </view>
                     <connections>
                         <outlet property="customMessageTableView" destination="aeP-2H-t66" id="Bz3-Rt-s6Q"/>
-                        <outlet property="newMessageTextField" destination="dY4-GY-sBa" id="ThH-h2-C45"/>
+                        <outlet property="newMessageTextView" destination="dY4-GY-sBa" id="ThH-h2-C45"/>
                         <outlet property="saveButton" destination="Hyz-og-xGs" id="gfx-rQ-Yu6"/>
                         <outlet property="titleOfMessageTextField" destination="NyN-XT-uOr" id="lgv-Ym-62d"/>
                     </connections>

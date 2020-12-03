@@ -30,7 +30,7 @@
                                     <constraint firstAttribute="height" constant="50" id="JIR-e7-Y0L"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <view contentMode="scaleToFill" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="n5L-O1-14J" customClass="TagListView" customModule="TagListView">
                                 <rect key="frame" x="16" y="327" width="343" height="274"/>
@@ -77,7 +77,7 @@
                                 </state>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Enter the message" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="QJg-aq-ObS">
-                                <rect key="frame" x="16" y="99" width="343" height="100"/>
+                                <rect key="frame" x="104" y="99" width="255" height="100"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="czI-rE-g5J"/>
@@ -93,7 +93,7 @@
                                     <constraint firstAttribute="height" constant="50" id="x1K-5N-zhZ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter The Country Code(without +) and Number" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="nXp-Rx-WqR">
                                 <rect key="frame" x="16" y="224" width="343" height="21"/>
@@ -112,7 +112,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="buttonPressed:" destination="z4R-fZ-vw5" eventType="touchUpInside" id="vTs-PR-GY3"/>
+                                    <action selector="sendButtonPressed:" destination="z4R-fZ-vw5" eventType="touchUpInside" id="vTs-PR-GY3"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -126,7 +126,7 @@
                             <constraint firstItem="n5L-O1-14J" firstAttribute="leading" secondItem="i3Q-dg-wnA" secondAttribute="leading" constant="16" id="9aE-e6-89g"/>
                             <constraint firstItem="nXp-Rx-WqR" firstAttribute="top" secondItem="XrO-L6-mZe" secondAttribute="bottom" constant="16" id="9xc-Lz-UbX"/>
                             <constraint firstItem="Ttk-sm-ofL" firstAttribute="width" secondItem="i3Q-dg-wnA" secondAttribute="width" multiplier="0.5" id="ABl-i9-iqf"/>
-                            <constraint firstItem="QJg-aq-ObS" firstAttribute="leading" secondItem="i3Q-dg-wnA" secondAttribute="leading" constant="16" id="CQI-Ma-EsE"/>
+                            <constraint firstItem="QJg-aq-ObS" firstAttribute="leading" secondItem="i3Q-dg-wnA" secondAttribute="leading" constant="104" id="CQI-Ma-EsE"/>
                             <constraint firstItem="svN-1p-xYS" firstAttribute="leading" secondItem="2Xz-k3-Kg6" secondAttribute="leading" id="Gaz-0i-VsH"/>
                             <constraint firstItem="n5L-O1-14J" firstAttribute="top" secondItem="Ttk-sm-ofL" secondAttribute="bottom" constant="16" id="I9k-xz-OAN"/>
                             <constraint firstItem="Pzh-eD-3g7" firstAttribute="leading" secondItem="i3Q-dg-wnA" secondAttribute="leading" constant="16" id="Ife-7w-tXj"/>
