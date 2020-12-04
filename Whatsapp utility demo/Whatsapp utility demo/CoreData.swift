@@ -11,14 +11,32 @@ import UIKit
 import CoreData
 
 class CoreData {
+  
+    static let sharedManager = CoreData()
+
+    private init() {} // Prevent clients from creating another instance.
+  
+    private let managedContext = CoreData.sharedManager.persistentContainer.viewContext
     
-    private let managedContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
+    lazy var persistentContainer: NSPersistentContainer = {
+    
+    let container = NSPersistentContainer(name: "Model")
+    
+    
+    container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+      
+        if let error = error as NSError? {
+            fatalError("Unresolved error \(error), \(error.userInfo)")
+      }
+    })
+        return container
+    }()
     
     
     func createMessage(title: String, message: String) {
         
         //creating a new record
-        let newMessage = Messages(context: managedContext!)
+        let newMessage = Messages(context: managedContext)
         newMessage.message = message
         newMessage.messageTitle = title
         
@@ -28,7 +46,7 @@ class CoreData {
     
     func createHistory(number: String, message: String) {
         //creating a new record
-        let newNumber = History(context: managedContext!)
+        let newNumber = History(context: managedContext)
         newNumber.message = message
         newNumber.number = number
         
@@ -38,7 +56,7 @@ class CoreData {
     
     func saveData() {
         do {
-            try self.managedContext?.save()
+            try self.managedContext.save()
         } catch {
             print("error in saving the data")
         }
@@ -49,7 +67,7 @@ class CoreData {
         
         //fetch the data from core data
         do {
-            messages = try managedContext?.fetch(Messages.fetchRequest())
+            messages = try managedContext.fetch(Messages.fetchRequest())
         } catch {
             print("fetching of messages failed")
         }
@@ -61,7 +79,7 @@ class CoreData {
         
         //fetch the data from core data
         do {
-            history = try managedContext?.fetch(History.fetchRequest())
+            history = try managedContext.fetch(History.fetchRequest())
         } catch {
             print("fetching of messages failed")
         }
@@ -69,3 +87,62 @@ class CoreData {
         
     }
 }
+//class CoreData {
+//
+//    private let managedContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
+//
+//
+//    func createMessage(title: String, message: String) {
+//
+//        //creating a new record
+//        let newMessage = Messages(context: managedContext!)
+//        newMessage.message = message
+//        newMessage.messageTitle = title
+//
+//        //save the data after creating it
+//        saveData()
+//    }
+//
+//    func createHistory(number: String, message: String) {
+//        //creating a new record
+//        let newNumber = History(context: managedContext!)
+//        newNumber.message = message
+//        newNumber.number = number
+//
+//        //save the data after creating it
+//        saveData()
+//    }
+//
+//    func saveData() {
+//        do {
+//            try self.managedContext?.save()
+//        } catch {
+//            print("error in saving the data")
+//        }
+//    }
+//
+//    func fetchMessages() -> [Messages] {
+//        var messages: [Messages]?
+//
+//        //fetch the data from core data
+//        do {
+//            messages = try managedContext?.fetch(Messages.fetchRequest())
+//        } catch {
+//            print("fetching of messages failed")
+//        }
+//        return messages ?? []
+//    }
+//
+//    func fetchHistory() -> [History] {
+//        var history: [History]?
+//
+//        //fetch the data from core data
+//        do {
+//            history = try managedContext?.fetch(History.fetchRequest())
+//        } catch {
+//            print("fetching of messages failed")
+//        }
+//        return history ?? []
+//
+//    }
+//}

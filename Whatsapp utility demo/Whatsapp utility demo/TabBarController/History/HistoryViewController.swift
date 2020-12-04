@@ -13,13 +13,12 @@ class HistoryViewController: UIViewController {
 
     @IBOutlet weak var historyTableView: UITableView!
     
-    let coreDataObject = CoreData()
     var history: [History]? {
         didSet {
             historyTableView.reloadData()
         }
     }
-    let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
+    let context = CoreData.sharedManager.persistentContainer.viewContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +39,7 @@ class HistoryViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        history = coreDataObject.fetchHistory()
+        history = CoreData.sharedManager.fetchHistory()
         historyTableView.reloadData()
     }
 
@@ -69,14 +68,14 @@ extension HistoryViewController: UITableViewDelegate, UITableViewDataSource {
             let messageToRemove = self.history![indexPath.row]
             
             //delete the object
-            self.context?.delete(messageToRemove)
+            self.context.delete(messageToRemove)
             
             //save the data
             
-            self.coreDataObject.saveData()
+            CoreData.sharedManager.saveData()
             
             // re-fetch the data
-            self.history = self.coreDataObject.fetchHistory()
+            self.history = CoreData.sharedManager.fetchHistory()
             self.historyTableView.reloadData()
         }
         

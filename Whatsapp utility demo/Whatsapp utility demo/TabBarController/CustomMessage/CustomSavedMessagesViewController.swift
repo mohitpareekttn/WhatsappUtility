@@ -16,8 +16,7 @@ class CustomSavedMessagesViewController: UIViewController {
     @IBOutlet weak var customMessageTableView: UITableView!
     
     var messages: [Messages]?
-    let coreDataObject = CoreData()
-    let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
+    let context = CoreData.sharedManager.persistentContainer.viewContext
     
     
     
@@ -37,16 +36,16 @@ class CustomSavedMessagesViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        messages = coreDataObject.fetchMessages()
+        messages = CoreData.sharedManager.fetchMessages()
         self.messages?.reverse()
         customMessageTableView.reloadData()
     }
     
     @IBAction func saveButtonTapped(_ sender: UIButton) {
         self.view.endEditing(true)
-        coreDataObject.createMessage(title: titleOfMessageTextField.text ?? "nil", message: newMessageTextView.text)
+        CoreData.sharedManager.createMessage(title: titleOfMessageTextField.text ?? "nil", message: newMessageTextView.text)
         DispatchQueue.main.async {
-            self.messages = self.coreDataObject.fetchMessages()
+            self.messages = CoreData.sharedManager.fetchMessages()
             self.messages?.reverse()
             self.customMessageTableView.reloadData()
         }
@@ -91,14 +90,14 @@ extension CustomSavedMessagesViewController: UITableViewDelegate, UITableViewDat
             let messageToRemove = self.messages![indexPath.row]
             
             //delete the object
-            self.context?.delete(messageToRemove)
+            self.context.delete(messageToRemove)
             
             //save the data
             
-            self.coreDataObject.saveData()
+            CoreData.sharedManager.saveData()
             
             // re-fetch the data
-            self.messages = self.coreDataObject.fetchMessages()
+            self.messages = CoreData.sharedManager.fetchMessages()
             self.customMessageTableView.reloadData()
         }
         

@@ -18,10 +18,9 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var enterTheMessageTextView: UITextView!
     @IBOutlet weak var sendButton: UIButton!
     
-    let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
+    let context = CoreData.sharedManager.persistentContainer.viewContext
     var messages: [Messages] = []
     var tags: [String] = []
-    let coreDataObj = CoreData()
     
     
     
@@ -40,7 +39,7 @@ class HomeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        messages = coreDataObj.fetchMessages()
+        messages = CoreData.sharedManager.fetchMessages()
         self.addTagsOnTagView()
     }
     
@@ -108,7 +107,7 @@ extension HomeViewController {
     
     fileprivate func openWhatsapp(){
         //let phoneNumber =  "+919205156768"
-        let urlWhats = "https://wa.me/" + "+" + enterTheNumberTextField.text! + "/?text=\(String(describing: enterTheMessageTextView.text))" //+918259885915/?text=hello"
+        let urlWhats = "https://wa.me/" + "+" + enterTheCodeTextField.text! + enterTheNumberTextField.text! + "/?text=\(String(describing: enterTheMessageTextView.text!))" //+918259885915/?text=hello"
 
         //let urlWhats = "https://api.whatsapp.com/send?phone=+918259885915&abid=12354&text=Hello"
         if let urlString = urlWhats.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed){
@@ -124,7 +123,7 @@ extension HomeViewController {
                     print("Install Whatsapp")
                 }
                 
-                coreDataObj.createHistory(number: enterTheNumberTextField.text ?? "", message: enterTheMessageTextView.text)
+                CoreData.sharedManager.createHistory(number: enterTheNumberTextField.text ?? "", message: enterTheMessageTextView.text)
             }
         }
     }
@@ -133,7 +132,7 @@ extension HomeViewController {
         let sms = "sms:\(enterTheNumberTextField.text)&body=\(enterTheMessageTextView.text)."
                 let strURL: String = sms.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
                 UIApplication.shared.open(URL.init(string: strURL)!, options: [:], completionHandler: nil)
-        coreDataObj.createHistory(number: enterTheNumberTextField.text ?? "", message: enterTheMessageTextView.text)
+        CoreData.sharedManager.createHistory(number: enterTheNumberTextField.text ?? "", message: enterTheMessageTextView.text)
     }
     
     fileprivate func addTagsOnTagView() {
