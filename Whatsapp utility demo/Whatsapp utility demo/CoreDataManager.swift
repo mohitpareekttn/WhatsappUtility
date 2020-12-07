@@ -10,13 +10,13 @@ import Foundation
 import UIKit
 import CoreData
 
-class CoreData {
+class CoreDataManager {
   
-    static let sharedManager = CoreData()
+    static let sharedManager = CoreDataManager()
 
     private init() {} // Prevent clients from creating another instance.
   
-    private let managedContext = CoreData.sharedManager.persistentContainer.viewContext
+    static let managedContext = CoreDataManager.sharedManager.persistentContainer.viewContext
     
     lazy var persistentContainer: NSPersistentContainer = {
     
@@ -36,27 +36,33 @@ class CoreData {
     func createMessage(title: String, message: String) {
         
         //creating a new record
-        let newMessage = Messages(context: managedContext)
+        let newMessage = Messages(context: CoreDataManager.managedContext)
         newMessage.message = message
         newMessage.messageTitle = title
         
         //save the data after creating it
-        saveData()
+//        saveData()
+    }
+    
+    func updateMessage(title: String, message: String, messages: Messages) {
+        let updatedMessage = Messages(context: CoreDataManager.managedContext)
+        updatedMessage.message = message
+        updatedMessage.messageTitle = title
     }
     
     func createHistory(number: String, message: String) {
         //creating a new record
-        let newNumber = History(context: managedContext)
+        let newNumber = History(context: CoreDataManager.managedContext)
         newNumber.message = message
         newNumber.number = number
         
         //save the data after creating it
-        saveData()
+        //saveData()
     }
     
     func saveData() {
         do {
-            try self.managedContext.save()
+            try CoreDataManager.managedContext.save()
         } catch {
             print("error in saving the data")
         }
@@ -67,7 +73,7 @@ class CoreData {
         
         //fetch the data from core data
         do {
-            messages = try managedContext.fetch(Messages.fetchRequest())
+            messages = try CoreDataManager.managedContext.fetch(Messages.fetchRequest())
         } catch {
             print("fetching of messages failed")
         }
@@ -79,7 +85,7 @@ class CoreData {
         
         //fetch the data from core data
         do {
-            history = try managedContext.fetch(History.fetchRequest())
+            history = try CoreDataManager.managedContext.fetch(History.fetchRequest())
         } catch {
             print("fetching of messages failed")
         }

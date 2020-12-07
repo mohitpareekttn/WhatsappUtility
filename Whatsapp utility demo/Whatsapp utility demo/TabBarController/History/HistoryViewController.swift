@@ -18,7 +18,7 @@ class HistoryViewController: UIViewController {
             historyTableView.reloadData()
         }
     }
-    let context = CoreData.sharedManager.persistentContainer.viewContext
+    let context = CoreDataManager.sharedManager.persistentContainer.viewContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +39,7 @@ class HistoryViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        history = CoreData.sharedManager.fetchHistory()
+        history = CoreDataManager.sharedManager.fetchHistory()
         historyTableView.reloadData()
     }
 
@@ -72,10 +72,10 @@ extension HistoryViewController: UITableViewDelegate, UITableViewDataSource {
             
             //save the data
             
-            CoreData.sharedManager.saveData()
+            CoreDataManager.sharedManager.saveData()
             
             // re-fetch the data
-            self.history = CoreData.sharedManager.fetchHistory()
+            self.history = CoreDataManager.sharedManager.fetchHistory()
             self.historyTableView.reloadData()
         }
         

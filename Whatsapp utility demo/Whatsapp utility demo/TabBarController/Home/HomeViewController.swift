@@ -18,7 +18,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var enterTheMessageTextView: UITextView!
     @IBOutlet weak var sendButton: UIButton!
     
-    let context = CoreData.sharedManager.persistentContainer.viewContext
+    let context = CoreDataManager.sharedManager.persistentContainer.viewContext
     var messages: [Messages] = []
     var tags: [String] = []
     
@@ -39,7 +39,7 @@ class HomeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        messages = CoreData.sharedManager.fetchMessages()
+        messages = CoreDataManager.sharedManager.fetchMessages()
         self.addTagsOnTagView()
     }
     
@@ -123,16 +123,16 @@ extension HomeViewController {
                     print("Install Whatsapp")
                 }
                 
-                CoreData.sharedManager.createHistory(number: enterTheNumberTextField.text ?? "", message: enterTheMessageTextView.text)
+                CoreDataManager.sharedManager.createHistory(number: enterTheNumberTextField.text ?? "", message: enterTheMessageTextView.text)
             }
         }
     }
     
    fileprivate func sendMessage() {
-        let sms = "sms:\(enterTheNumberTextField.text)&body=\(enterTheMessageTextView.text)."
-                let strURL: String = sms.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        let sms = "sms:+" + enterTheCodeTextField.text! + enterTheNumberTextField.text! + "&body=" + enterTheMessageTextView.text!
+        let strURL: String = sms.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
                 UIApplication.shared.open(URL.init(string: strURL)!, options: [:], completionHandler: nil)
-        CoreData.sharedManager.createHistory(number: enterTheNumberTextField.text ?? "", message: enterTheMessageTextView.text)
+        CoreDataManager.sharedManager.createHistory(number: enterTheNumberTextField.text ?? "", message: enterTheMessageTextView.text)
     }
     
     fileprivate func addTagsOnTagView() {

@@ -16,7 +16,7 @@ class CustomSavedMessagesViewController: UIViewController {
     @IBOutlet weak var customMessageTableView: UITableView!
     
     var messages: [Messages]?
-    let context = CoreData.sharedManager.persistentContainer.viewContext
+    let context = CoreDataManager.sharedManager.persistentContainer.viewContext
     
     
     
@@ -36,19 +36,24 @@ class CustomSavedMessagesViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        messages = CoreData.sharedManager.fetchMessages()
+        messages = CoreDataManager.sharedManager.fetchMessages()
         self.messages?.reverse()
         customMessageTableView.reloadData()
+        print(messages?.count)
     }
     
     @IBAction func saveButtonTapped(_ sender: UIButton) {
         self.view.endEditing(true)
-        CoreData.sharedManager.createMessage(title: titleOfMessageTextField.text ?? "nil", message: newMessageTextView.text)
+        
+        CoreDataManager.sharedManager.createMessage(title: titleOfMessageTextField.text ?? "nil", message: newMessageTextView.text)
         DispatchQueue.main.async {
-            self.messages = CoreData.sharedManager.fetchMessages()
+            self.messages = CoreDataManager.sharedManager.fetchMessages()
             self.messages?.reverse()
             self.customMessageTableView.reloadData()
         }
+        titleOfMessageTextField.text = ""
+        newMessageTextView.text = "Enter the message"
+        newMessageTextView.textColor = UIColor.lightGray
     }
     
     fileprivate func setUpSaveButton() {
@@ -94,15 +99,19 @@ extension CustomSavedMessagesViewController: UITableViewDelegate, UITableViewDat
             
             //save the data
             
-            CoreData.sharedManager.saveData()
+            CoreDataManager.sharedManager.saveData()
             
             // re-fetch the data
-            self.messages = CoreData.sharedManager.fetchMessages()
+            self.messages = CoreDataManager.sharedManager.fetchMessages()
             self.customMessageTableView.reloadData()
         }
         
         return UISwipeActionsConfiguration(actions: [action])
         
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath.row)
     }
 }
 
