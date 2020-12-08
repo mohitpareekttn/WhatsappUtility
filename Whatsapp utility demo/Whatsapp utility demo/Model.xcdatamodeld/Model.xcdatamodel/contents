@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17192" systemVersion="19H2" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="History" representedClassName="History" syncable="YES" codeGenerationType="category">
+        <attribute name="counter" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="message" optional="YES" attributeType="String"/>
         <attribute name="number" optional="YES" attributeType="String"/>
     </entity>
     <entity name="Messages" representedClassName="Messages" syncable="YES" codeGenerationType="category">
+        <attribute name="counter" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="message" optional="YES" attributeType="String"/>
         <attribute name="messageTitle" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="Messages" positionX="-63" positionY="-18" width="128" height="73"/>
-        <element name="History" positionX="-63" positionY="0" width="128" height="73"/>
+        <element name="History" positionX="-63" positionY="0" width="128" height="88"/>
+        <element name="Messages" positionX="-63" positionY="-18" width="128" height="88"/>
     </elements>
 </model>

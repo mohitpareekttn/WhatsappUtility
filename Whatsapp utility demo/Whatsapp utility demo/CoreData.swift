@@ -10,13 +10,13 @@ import Foundation
 import UIKit
 import CoreData
 
-class CoreDataManager {
+public class CoreDataManager {
   
     static let sharedManager = CoreDataManager()
 
     private init() {} // Prevent clients from creating another instance.
   
-    static let managedContext = CoreDataManager.sharedManager.persistentContainer.viewContext
+    private let managedContext = CoreDataManager.sharedManager.persistentContainer.viewContext
     
     lazy var persistentContainer: NSPersistentContainer = {
     
@@ -35,42 +35,28 @@ class CoreDataManager {
     
     func createMessage(title: String, message: String) {
         
-        let counter = UserDefaults.standard.integer(forKey: "messageCounter")
-        
-        
         //creating a new record
-        let newMessage = Messages(context: CoreDataManager.managedContext)
+        let newMessage = Messages(context: managedContext)
         newMessage.message = message
         newMessage.messageTitle = title
-        newMessage.counter = Int64(counter + 1)
         
-        UserDefaults.standard.setValue(counter + 1, forKey: "messageCounter")
-        
-    }
-    
-    func updateMessage(title: String, message: String, messages: Messages) {
-        let updatedMessage = Messages(context: CoreDataManager.managedContext)
-        updatedMessage.message = message
-        updatedMessage.messageTitle = title
+        //save the data after creating it
+        saveData()
     }
     
     func createHistory(number: String, message: String) {
-        
-        let counter = UserDefaults.standard.integer(forKey: "historyCounter")
         //creating a new record
-        let newNumber = History(context: CoreDataManager.managedContext)
+        let newNumber = History(context: managedContext)
         newNumber.message = message
         newNumber.number = number
-        newNumber.counter = Int64(counter + 1)
         
-        UserDefaults.standard.setValue(counter + 1, forKey: "historyCounter")
         //save the data after creating it
-        //saveData()
+        saveData()
     }
     
     func saveData() {
         do {
-            try CoreDataManager.managedContext.save()
+            try self.managedContext.save()
         } catch {
             print("error in saving the data")
         }
@@ -80,16 +66,8 @@ class CoreDataManager {
         var messages: [Messages]?
         
         //fetch the data from core data
-        let freq = NSFetchRequest<NSFetchRequestResult>(entityName: "Messages")
-        let sortDescriptor = NSSortDescriptor(key: "counter", ascending: true)
-        freq.sortDescriptors = [sortDescriptor]
-        
         do {
-//            messages = try CoreDataManager.managedContext.fetch(Messages.fetchRequest())
-            let fetchedResults: [Messages] = try CoreDataManager.managedContext.fetch(freq) as! [Messages]
-            if let results: [Messages] = fetchedResults {
-                messages = results
-            }
+            messages = try managedContext.fetch(Messages.fetchRequest())
         } catch {
             print("fetching of messages failed")
         }
@@ -100,15 +78,8 @@ class CoreDataManager {
         var history: [History]?
         
         //fetch the data from core data
-        let freq = NSFetchRequest<NSFetchRequestResult>(entityName: "History")
-        let sortDescriptor = NSSortDescriptor(key: "counter", ascending: true)
-        freq.sortDescriptors = [sortDescriptor]
         do {
-            //history = try CoreDataManager.managedContext.fetch(History.fetchRequest())
-            let fetchedResults: [History] = try CoreDataManager.managedContext.fetch(freq) as! [History]
-            if let results: [History] = fetchedResults {
-                history = results
-            }
+            history = try managedContext.fetch(History.fetchRequest())
         } catch {
             print("fetching of messages failed")
         }
@@ -175,15 +146,3 @@ class CoreDataManager {
 //
 //    }
 //}
-
-//fileprivate lazy var fetchedResultController1: NSFetchedResultsController<UserImageData> =
-//    {
-//        let appDelegate = UIApplication.shared.delegate as? AppDelegate
-//        let context = appDelegate?.persistentContainer.viewContext
-//        let fetchRequest:NSFetchRequest = UserImageData.fetchRequest()
-//        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "urlImage", ascending: false)]
-//        let fetchResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context!, sectionNameKeyPath: nil, cacheName: nil)
-//        fetchResultController.delegate = self
-//        try! fetchResultController.performFetch()
-//        return fetchResultController as! NSFetchedResultsController<UserImageData>
-//    }()

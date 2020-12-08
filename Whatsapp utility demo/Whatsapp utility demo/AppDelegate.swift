@@ -23,8 +23,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
            // This is the first launch ever
             print("First Launch")
+            UserDefaults.standard.setValue(0, forKey: "messageCounter")
+            UserDefaults.standard.setValue(0, forKey: "historyCounter")
             addDefaultValuesInCoreData()
             UserDefaults.standard.set(true, forKey: "HasLaunchedOnce")
+            
             UserDefaults.standard.synchronize()
             
             
