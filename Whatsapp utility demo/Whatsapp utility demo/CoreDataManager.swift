@@ -48,10 +48,11 @@ class CoreDataManager {
         
     }
     
-    func updateMessage(title: String, message: String, messages: Messages) {
+    func updateMessage(title: String, message: String, counter: Int64) {
         let updatedMessage = Messages(context: CoreDataManager.managedContext)
         updatedMessage.message = message
         updatedMessage.messageTitle = title
+        updatedMessage.counter = counter
     }
     
     func createHistory(number: String, message: String) {

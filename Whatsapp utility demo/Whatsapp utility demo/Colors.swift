@@ -12,4 +12,5 @@ import UIKit
 class Colors {
     static let appThemeColor = UIColor(red: 144/255, green: 196/255, blue: 90/255, alpha: 1.0)
     static let whiteColor = UIColor.white
+    static let deleteButtonColor = UIColor(red: 242/255, green: 242/255, blue: 242/255, alpha: 1)
 }

@@ -14,10 +14,14 @@ class CustomSavedMessagesViewController: UIViewController {
     @IBOutlet weak var newMessageTextView: UITextView!
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var customMessageTableView: UITableView!
+    @IBOutlet weak var updateAndDeleteView: UIStackView!
+    @IBOutlet weak var updateButton: UIButton!
     
+    @IBOutlet weak var deleteButton: UIButton!
     var messages: [Messages]?
     let context = CoreDataManager.sharedManager.persistentContainer.viewContext
     
+    var counter = 0
     
     
     
@@ -31,6 +35,9 @@ class CustomSavedMessagesViewController: UIViewController {
         newMessageTextView.textColor = UIColor.lightGray
         setUpNavigationBar()
         setUpSaveButton()
+        updateAndDeleteView.isHidden = true
+        setUpUpdateButton()
+        setUpDeleteButton()
         
     }
     
@@ -56,6 +63,34 @@ class CustomSavedMessagesViewController: UIViewController {
         newMessageTextView.textColor = UIColor.lightGray
     }
     
+    @IBAction func updateButtonTapped(_ sender: UIButton) {
+        //let message = Messages(context: CoreDataManager.managedContext)
+        
+        CoreDataManager.sharedManager.updateMessage(title: titleOfMessageTextField.text ?? "", message: newMessageTextView.text, counter: Int64(counter))
+        titleOfMessageTextField.text = ""
+        newMessageTextView.text = "Enter the message"
+        newMessageTextView.textColor = UIColor.lightGray
+        updateAndDeleteView.isHidden = true
+        DispatchQueue.main.async {
+            self.messages = CoreDataManager.sharedManager.fetchMessages()
+            self.messages?.reverse()
+            self.customMessageTableView.reloadData()
+        }
+        
+    }
+    
+    @IBAction func deleteButtonTapped(_ sender: UIButton) {
+        titleOfMessageTextField.text = ""
+        newMessageTextView.text = "Enter the message"
+        newMessageTextView.textColor = UIColor.lightGray
+        updateAndDeleteView.isHidden = true
+        DispatchQueue.main.async {
+            self.messages = CoreDataManager.sharedManager.fetchMessages()
+            self.messages?.reverse()
+            self.customMessageTableView.reloadData()
+        }
+    }
+    
     fileprivate func setUpSaveButton() {
         saveButton.backgroundColor = Colors.appThemeColor
         saveButton.titleLabel?.font = UIFont(name: "SFProDisplay-Light", size: 18)
@@ -71,6 +106,24 @@ class CustomSavedMessagesViewController: UIViewController {
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white, NSAttributedString.Key.font: UIFont(name: "SFProDisplay-Bold", size: 22)!]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
         
+    }
+    
+    fileprivate func setUpUpdateButton() {
+        updateButton.backgroundColor = Colors.appThemeColor
+        updateButton.titleLabel?.font = UIFont(name: "SFProDisplay-Light", size: 18)
+        updateButton.titleLabel?.textColor = Colors.whiteColor
+        updateButton.layer.cornerRadius = 25
+        updateButton.layer.borderWidth = 1
+        updateButton.layer.borderColor = Colors.whiteColor.cgColor
+    }
+    
+    fileprivate func setUpDeleteButton() {
+        deleteButton.backgroundColor = Colors.deleteButtonColor
+        deleteButton.titleLabel?.font = UIFont(name: "SFProDisplay-Light", size: 18)
+        deleteButton.titleLabel?.textColor = .black
+        deleteButton.layer.cornerRadius = 25
+        deleteButton.layer.borderWidth = 1
+        deleteButton.layer.borderColor = UIColor.black.cgColor
     }
     
 }
@@ -112,6 +165,16 @@ extension CustomSavedMessagesViewController: UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath.row)
+        let message = messages![indexPath.row]
+        titleOfMessageTextField.text = message.messageTitle
+        newMessageTextView.text = message.message
+        counter = (Int(message.counter))
+        updateAndDeleteView.isHidden = false
+        //set the reference to the person object
+        let messageToRemove = self.messages![indexPath.row]
+        
+        //delete the object
+        self.context.delete(messageToRemove)
     }
 }
 

@@ -84,6 +84,30 @@
                                     <constraint firstAttribute="height" constant="1" id="dEQ-4O-9QW"/>
                                 </constraints>
                             </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="N5z-ft-9qW">
+                                <rect key="frame" x="16" y="180" width="343" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="suV-9t-s6o">
+                                        <rect key="frame" x="0.0" y="0.0" width="163.5" height="50"/>
+                                        <state key="normal" title="Update">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="updateButtonTapped:" destination="7fq-Jn-baz" eventType="touchUpInside" id="JVo-EJ-wY0"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0gp-ue-5T1">
+                                        <rect key="frame" x="179.5" y="0.0" width="163.5" height="50"/>
+                                        <state key="normal" title="Delete">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="deleteButtonTapped:" destination="7fq-Jn-baz" eventType="touchUpInside" id="D1d-ET-tTo"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nzy-eh-sQg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -94,6 +118,8 @@
                             <constraint firstItem="Hyz-og-xGs" firstAttribute="centerX" secondItem="LbN-ox-EVr" secondAttribute="centerX" id="9ZW-Hr-Lee"/>
                             <constraint firstItem="aeP-2H-t66" firstAttribute="leading" secondItem="LbN-ox-EVr" secondAttribute="leading" constant="16" id="A8B-E6-egB"/>
                             <constraint firstAttribute="trailing" secondItem="aeP-2H-t66" secondAttribute="trailing" constant="16" id="BlH-Bh-8jm"/>
+                            <constraint firstItem="N5z-ft-9qW" firstAttribute="top" secondItem="kKd-Kq-qpK" secondAttribute="bottom" constant="8" id="DGt-HV-xyM"/>
+                            <constraint firstItem="N5z-ft-9qW" firstAttribute="leading" secondItem="nzy-eh-sQg" secondAttribute="leading" constant="16" id="Dir-zh-HCj"/>
                             <constraint firstItem="dY4-GY-sBa" firstAttribute="leading" secondItem="nzy-eh-sQg" secondAttribute="leading" constant="16" id="Hc0-Z4-UP8"/>
                             <constraint firstAttribute="trailing" secondItem="kKd-Kq-qpK" secondAttribute="trailing" constant="16" id="II9-zx-Pil"/>
                             <constraint firstAttribute="trailing" secondItem="Hrw-Tz-ITl" secondAttribute="trailing" constant="16" id="LNd-3G-ifx"/>
@@ -101,6 +127,7 @@
                             <constraint firstItem="NyN-XT-uOr" firstAttribute="top" secondItem="nzy-eh-sQg" secondAttribute="top" constant="16" id="MXP-xj-cgy"/>
                             <constraint firstItem="9y7-p7-iJU" firstAttribute="leading" secondItem="LbN-ox-EVr" secondAttribute="leading" constant="16" id="Mbc-8r-YN2"/>
                             <constraint firstAttribute="bottom" secondItem="aeP-2H-t66" secondAttribute="bottom" id="SFK-fs-sDp"/>
+                            <constraint firstItem="Hrw-Tz-ITl" firstAttribute="top" secondItem="N5z-ft-9qW" secondAttribute="bottom" constant="8" id="ViF-D3-gA5"/>
                             <constraint firstItem="Hyz-og-xGs" firstAttribute="width" secondItem="LbN-ox-EVr" secondAttribute="width" multiplier="0.5" id="Wjc-8n-e59"/>
                             <constraint firstItem="Hyz-og-xGs" firstAttribute="top" secondItem="kKd-Kq-qpK" secondAttribute="bottom" constant="8" id="jhq-b1-Erk"/>
                             <constraint firstItem="nzy-eh-sQg" firstAttribute="trailing" secondItem="NyN-XT-uOr" secondAttribute="trailing" constant="16" id="mB8-oh-pdv"/>
@@ -109,14 +136,18 @@
                             <constraint firstItem="aeP-2H-t66" firstAttribute="top" secondItem="Hrw-Tz-ITl" secondAttribute="bottom" constant="8" id="ntC-KP-u5C"/>
                             <constraint firstItem="NyN-XT-uOr" firstAttribute="leading" secondItem="nzy-eh-sQg" secondAttribute="leading" constant="16" id="qXw-A2-Izp"/>
                             <constraint firstItem="kKd-Kq-qpK" firstAttribute="leading" secondItem="LbN-ox-EVr" secondAttribute="leading" constant="16" id="tVx-f7-4Zo"/>
+                            <constraint firstItem="nzy-eh-sQg" firstAttribute="trailing" secondItem="N5z-ft-9qW" secondAttribute="trailing" constant="16" id="vxk-df-njG"/>
                             <constraint firstItem="kKd-Kq-qpK" firstAttribute="top" secondItem="dY4-GY-sBa" secondAttribute="bottom" constant="8" id="zRC-ax-Qmd"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="customMessageTableView" destination="aeP-2H-t66" id="Bz3-Rt-s6Q"/>
+                        <outlet property="deleteButton" destination="0gp-ue-5T1" id="kF5-Rh-YUS"/>
                         <outlet property="newMessageTextView" destination="dY4-GY-sBa" id="ThH-h2-C45"/>
                         <outlet property="saveButton" destination="Hyz-og-xGs" id="gfx-rQ-Yu6"/>
                         <outlet property="titleOfMessageTextField" destination="NyN-XT-uOr" id="lgv-Ym-62d"/>
+                        <outlet property="updateAndDeleteView" destination="N5z-ft-9qW" id="ZzD-yg-Ty8"/>
+                        <outlet property="updateButton" destination="suV-9t-s6o" id="TsH-BP-Nz3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z0k-nb-73v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
