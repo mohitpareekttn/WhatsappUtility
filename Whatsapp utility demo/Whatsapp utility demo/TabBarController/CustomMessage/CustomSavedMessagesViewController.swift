@@ -21,7 +21,7 @@ class CustomSavedMessagesViewController: UIViewController {
     var messages: [Messages]?
     let context = CoreDataManager.sharedManager.persistentContainer.viewContext
     
-    var counter = 0
+    var counter : Int?
     
     
     
@@ -49,6 +49,22 @@ class CustomSavedMessagesViewController: UIViewController {
         print(messages?.count)
     }
     
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        print("<<<<<<<<<<<<<<<<<<view will disappear")
+        if counter != nil {
+            CoreDataManager.sharedManager.updateMessage(title: titleOfMessageTextField.text ?? "", message: newMessageTextView.text, counter: Int64(counter!))
+            titleOfMessageTextField.text = ""
+            newMessageTextView.text = "Enter the message"
+            newMessageTextView.textColor = UIColor.lightGray
+            updateAndDeleteView.isHidden = true
+        }
+        CoreDataManager.sharedManager.saveData()
+        counter = nil
+        
+    }
+    
     @IBAction func saveButtonTapped(_ sender: UIButton) {
         self.view.endEditing(true)
         
@@ -66,7 +82,7 @@ class CustomSavedMessagesViewController: UIViewController {
     @IBAction func updateButtonTapped(_ sender: UIButton) {
         //let message = Messages(context: CoreDataManager.managedContext)
         
-        CoreDataManager.sharedManager.updateMessage(title: titleOfMessageTextField.text ?? "", message: newMessageTextView.text, counter: Int64(counter))
+        CoreDataManager.sharedManager.updateMessage(title: titleOfMessageTextField.text ?? "", message: newMessageTextView.text, counter: Int64(counter!))
         titleOfMessageTextField.text = ""
         newMessageTextView.text = "Enter the message"
         newMessageTextView.textColor = UIColor.lightGray

@@ -39,6 +39,7 @@ class HomeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        print("<<<<<<<<<viewwillappear")
         messages = CoreDataManager.sharedManager.fetchMessages()
         self.addTagsOnTagView()
     }
@@ -64,6 +65,8 @@ extension HomeViewController: TagListViewDelegate {
                 enterTheMessageTextView.text = item.message
             }
         }
+        enterTheMessageTextView.textColor = .black
+        enterTheMessageTextView.becomeFirstResponder()
     }
 }
 
