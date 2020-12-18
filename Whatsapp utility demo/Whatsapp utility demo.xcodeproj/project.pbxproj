@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		450AD6BB258C989E00550759 /* AnalyticsConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450AD6BA258C989E00550759 /* AnalyticsConstant.swift */; };
 		452D9198256F8E0600C211AC /* SF-Pro-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 452D918F256F8E0500C211AC /* SF-Pro-Display-Bold.otf */; };
 		452D9199256F8E0600C211AC /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 452D9190256F8E0600C211AC /* SF-Pro-Display-Regular.otf */; };
 		452D919B256F8E0600C211AC /* SF-Pro-Display-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 452D9192256F8E0600C211AC /* SF-Pro-Display-Light.otf */; };
@@ -38,6 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		450AD6BA258C989E00550759 /* AnalyticsConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsConstant.swift; sourceTree = "<group>"; };
 		452D918F256F8E0500C211AC /* SF-Pro-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Bold.otf"; sourceTree = "<group>"; };
 		452D9190256F8E0600C211AC /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; };
 		452D9192256F8E0600C211AC /* SF-Pro-Display-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Light.otf"; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 				452D9189256F763D00C211AC /* TabBarController */,
 				45FFAE53255805C900CF6697 /* CoreDataModel */,
 				4585C6F7256A8DC6005A487A /* AppStoryBoards.swift */,
+				450AD6BA258C989E00550759 /* AnalyticsConstant.swift */,
 				45FFAE152554118F00CF6697 /* Assets.xcassets */,
 				45FFAE2025558EFB00CF6697 /* Model.xcdatamodeld */,
 				45FFAE172554118F00CF6697 /* LaunchScreen.storyboard */,
@@ -357,6 +360,7 @@
 				45FFAE5D255825F600CF6697 /* CustomSavedMessagesViewController.swift in Sources */,
 				45460902256796170046E8CF /* FeaturedViewController.swift in Sources */,
 				454608E7256642690046E8CF /* HistoryViewController.swift in Sources */,
+				450AD6BB258C989E00550759 /* AnalyticsConstant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
