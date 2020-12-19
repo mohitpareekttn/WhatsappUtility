@@ -25,6 +25,9 @@ struct AnalyticsConstants {
         static let SEND_MESSAGE = "SEND_MESSAGE"
         static let SEND_VIA_WHATSAPP = "SEND_VIA_WHATSAPP"
         static let SEND_VIA_IPHONE_MESSGEAPP = "SEND_VIA_IPHONE_MESSGEAPP"
+        static let SAVE_CUSTOM_MESSAGE = "SAVE_CUSTOM_MESSAGE"
+        static let UPDATE_CUSTOM_MESSAGE = "UPDATE_CUSTOM_MESSAGE"
+        static let DELETE_CUSTOM_MESSAGE = "DELETE_CUSTOM_MESSAGE"
     }
     
     struct EventAttributes {
@@ -48,6 +51,9 @@ public class AnalyticsEventKey : NSObject {
     class func sendMessageButtonTapped() -> String { return AnalyticsConstants.EventKey.SEND_MESSAGE }
     class func sendViaWhatsapp() -> String { return AnalyticsConstants.EventKey.SEND_VIA_WHATSAPP }
     class func sendViaIphoneMessage() -> String { return AnalyticsConstants.EventKey.SEND_VIA_IPHONE_MESSGEAPP }
+    class func saveCustomMessage() -> String { return AnalyticsConstants.EventKey.SAVE_CUSTOM_MESSAGE }
+    class func updateCustomMessage() -> String { return AnalyticsConstants.EventKey.UPDATE_CUSTOM_MESSAGE }
+    class func deleteCustomMessage() -> String { return AnalyticsConstants.EventKey.DELETE_CUSTOM_MESSAGE }
 }
 
 
