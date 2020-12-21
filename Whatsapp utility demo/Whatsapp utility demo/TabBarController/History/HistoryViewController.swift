@@ -23,11 +23,12 @@ class HistoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.historyTableView.delegate = self
-        self.historyTableView.dataSource = self
         
         let nib = UINib(nibName: "HistoryTableViewCell", bundle: nil)
         historyTableView.register(nib, forCellReuseIdentifier: "HistoryCell")
+        
+        self.historyTableView.delegate = self
+        self.historyTableView.dataSource = self
         
         navigationItem.title = "HISTORY"
         navigationController?.navigationBar.barTintColor = Colors.appThemeColor

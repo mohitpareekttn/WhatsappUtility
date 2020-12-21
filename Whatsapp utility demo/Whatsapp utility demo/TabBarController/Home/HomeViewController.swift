@@ -12,7 +12,8 @@ import CoreData
 
 class HomeViewController: UIViewController {
 
-    @IBOutlet weak var tagView: TagListView!
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
+   // @IBOutlet weak var tagView: TagListView!
     @IBOutlet weak var enterTheCodeTextField: UITextField!
     @IBOutlet weak var enterTheNumberTextField: UITextField!
     @IBOutlet weak var enterTheMessageTextView: UITextView!
@@ -23,16 +24,17 @@ class HomeViewController: UIViewController {
     var tags: [String] = []
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tagView.textFont = UIFont.systemFont(ofSize: 24)
-        tagView.delegate = self
+//        tagView.textFont = UIFont.systemFont(ofSize: 24)
+//        tagView.delegate = self
         setUpNavBar()
         setUpSendButton()
         setUpTextField()
         setUpMessageTextView()
+        segmentedControl.backgroundColor = Colors.whiteColor
+        segmentedControl.selectedSegmentTintColor = Colors.appThemeColor
     }
     
     
@@ -41,14 +43,32 @@ class HomeViewController: UIViewController {
         super.viewWillAppear(animated)
         print("<<<<<<<<<viewwillappear")
         messages = CoreDataManager.sharedManager.fetchMessages()
-        self.addTagsOnTagView()
+        //self.addTagsOnTagView()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        tagView.removeAllTags()
+        //tagView.removeAllTags()
     }
 
+    
+    @IBAction func segmentPressed(_ sender: UISegmentedControl) {
+                
+        switch sender.selectedSegmentIndex {
+        case 0:
+            moveToComposeVC()
+        case 1:
+            moveToHistoryVC()
+        case 2:
+            moveToFavourites()
+            
+        case 3:
+            moveToSettingsVC()
+        default:
+            break
+        }
+    }
+    
     @IBAction func sendButtonPressed(_ sender: UIButton) {
         self.view.endEditing(true)
         openActionSheet()
@@ -58,17 +78,17 @@ class HomeViewController: UIViewController {
 
 }
 
-extension HomeViewController: TagListViewDelegate {
-    func tagPressed(_ title: String, tagView: TagView, sender: TagListView) {
-        for item in messages {
-            if title == item.messageTitle! {
-                enterTheMessageTextView.text = item.message
-            }
-        }
-        enterTheMessageTextView.textColor = .black
-        enterTheMessageTextView.becomeFirstResponder()
-    }
-}
+//extension HomeViewController: TagListViewDelegate {
+//    func tagPressed(_ title: String, tagView: TagView, sender: TagListView) {
+//        for item in messages {
+//            if title == item.messageTitle! {
+//                enterTheMessageTextView.text = item.message
+//            }
+//        }
+//        enterTheMessageTextView.textColor = .black
+//        enterTheMessageTextView.becomeFirstResponder()
+//    }
+//}
 
 
 extension HomeViewController: UITextFieldDelegate {
@@ -108,6 +128,54 @@ extension HomeViewController: UITextViewDelegate {
 
 extension HomeViewController {
     
+    fileprivate func moveToComposeVC() {
+        if self.children.count > 0{
+            let viewControllers:[UIViewController] = self.children
+            for viewContoller in viewControllers{
+                viewContoller.willMove(toParent: nil)
+                viewContoller.view.removeFromSuperview()
+                viewContoller.removeFromParent()
+            }
+        }
+    }
+    
+    fileprivate func moveToHistoryVC() {
+        let historyVC = HistoryViewController.instantiate(fromAppStoryboard: .WUHistoryStoryBoard)
+        addChild(historyVC!)
+        view.addSubview(historyVC!.view)
+        historyVC!.didMove(toParent: self)
+        historyVC!.view.translatesAutoresizingMaskIntoConstraints = false
+        historyVC!.view.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: 0).isActive = true
+        historyVC!.view.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 0).isActive = true
+        historyVC!.view.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: 0).isActive = true
+        historyVC!.view.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0).isActive = true
+    }
+    
+    fileprivate func moveToSettingsVC() {
+        let settingsVC = FeaturedViewController.instantiate(fromAppStoryboard: .FeaturedStoryBoard)
+        
+        addChild(settingsVC!)
+        view.addSubview(settingsVC!.view)
+        settingsVC!.didMove(toParent: self)
+        settingsVC!.view.translatesAutoresizingMaskIntoConstraints = false
+        settingsVC!.view.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: 0).isActive = true
+        settingsVC!.view.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 0).isActive = true
+        settingsVC!.view.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: 0).isActive = true
+        settingsVC!.view.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0).isActive = true
+    }
+    
+    fileprivate func moveToFavourites() {
+        let favouritesVC = CustomSavedMessagesViewController.instantiate(fromAppStoryboard: .CustomMessageStoryBoard)
+        addChild(favouritesVC!)
+        view.addSubview(favouritesVC!.view)
+        favouritesVC!.didMove(toParent: self)
+        favouritesVC!.view.translatesAutoresizingMaskIntoConstraints = false
+        favouritesVC!.view.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: 0).isActive = true
+        favouritesVC!.view.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 0).isActive = true
+        favouritesVC!.view.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: 0).isActive = true
+        favouritesVC!.view.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0).isActive = true
+    }
+    
     fileprivate func openWhatsapp(){
         //let phoneNumber =  "+919205156768"
         let urlWhats = "https://wa.me/" + "+" + enterTheCodeTextField.text! + enterTheNumberTextField.text! + "/?text=\(String(describing: enterTheMessageTextView.text!))" //+918259885915/?text=hello"
@@ -138,13 +206,13 @@ extension HomeViewController {
         CoreDataManager.sharedManager.createHistory(number: enterTheNumberTextField.text ?? "", message: enterTheMessageTextView.text)
     }
     
-    fileprivate func addTagsOnTagView() {
-        for title in messages {
-            tagView.addTag(title.messageTitle!)
-            
-        }
-        
-    }
+//    fileprivate func addTagsOnTagView() {
+//        for title in messages {
+//            tagView.addTag(title.messageTitle!)
+//
+//        }
+//
+//    }
     
     fileprivate func openActionSheet() {
         let optionMenu = UIAlertController(title: nil, message: "Choose Option", preferredStyle: .actionSheet)
@@ -178,15 +246,15 @@ extension HomeViewController {
     
     fileprivate func setUpNavBar() {
         navigationItem.title = "COMPOSE"
-        navigationController?.navigationBar.barTintColor = Colors.appThemeColor
+        navigationController?.navigationBar.barTintColor = Colors.whiteColor
         navigationController?.navigationBar.tintColor = Colors.whiteColor
-        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white, NSAttributedString.Key.font: UIFont(name: "SFProDisplay-Bold", size: 22)!]
-        navigationController?.navigationBar.titleTextAttributes = textAttributes
+//        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white, NSAttributedString.Key.font: UIFont(name: "SFProDisplay-Bold", size: 22)!]
+//        navigationController?.navigationBar.titleTextAttributes = textAttributes
     }
     
     fileprivate func setUpSendButton() {
         sendButton.titleLabel?.font = UIFont(name: "SFProDisplay-Light", size: 18)
-        sendButton.layer.cornerRadius = 25
+        sendButton.layer.cornerRadius = 10
         sendButton.layer.borderWidth = 1
         sendButton.layer.borderColor = Colors.whiteColor.cgColor
         sendButton.layer.backgroundColor = Colors.appThemeColor.cgColor
